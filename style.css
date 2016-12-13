@@ -932,7 +932,12 @@ object {
 }
 
 .entry-header {
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(0,0,0,0.1);
+}
+
+.hentry{
+  margin-bottom: 0;
+  padding-bottom: 1.5em;
 }
 
 .entry-title, .entry-meta, .entry-content, .entry-footer, .frontend-login-wrapper {
@@ -945,4 +950,21 @@ object {
 .frontend-login-wrapper {
   text-align: center
     
+}
+
+
+#site-navigation{
+  background-color: #494949;
+  padding: 0 0.5em 1.5em 0.5em;
+}
+
+
+#site-navigation ul {
+  display: flex;
+  justify-content: center;
+}
+
+#site-navigation ul li a{
+  color: #fff;
+  padding: 0.3em;
 }
