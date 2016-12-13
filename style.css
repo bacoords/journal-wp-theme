@@ -952,6 +952,16 @@ object {
     
 }
 
+.site-footer{
+  background-color: #494949;
+  padding: 0.3em;
+}
+
+.site-footer .site-info a{
+      color: #fff;
+    font-size: 0.9em;
+    text-decoration: none;
+}
 
 #site-navigation{
   background-color: #494949;
