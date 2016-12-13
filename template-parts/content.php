@@ -7,9 +7,12 @@
  * @package journal-wp-theme
  */
 
+
+   $cat = get_the_category();
+   $color = get_term_meta( $cat[0]->term_id, 'color', true);
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> <?php if($color) echo 'style="background-color:' . $color . '"';?>>
 	<header class="entry-header">
 		<?php
 		if ( is_single() ) :
@@ -27,8 +30,7 @@
 	</header><!-- .entry-header -->
 
 
-  <?php $color = get_term_meta( get_the_category(), 'color') ?>
-	<div class="entry-content" <?php if($color) echo 'style="background-color:"' . $color;?>>
+	<div class="entry-content">
 		<?php
 			the_content( sprintf(
 				/* translators: %s: Name of current post. */

@@ -932,7 +932,7 @@ object {
 }
 
 .entry-header {
-  background: #f6f6f6;
+  background-color: rgba(0,0,0,0.3);
 }
 
 .entry-title, .entry-meta, .entry-content, .entry-footer, .frontend-login-wrapper {
