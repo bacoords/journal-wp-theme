@@ -22,9 +22,9 @@
 		endif;
 
 		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
+<!--		<div class="entry-meta">-->
 			<?php // journal_wp_theme_posted_on(); ?>
-		</div><!-- .entry-meta -->
+<!--		</div> -->
 		<?php
 		endif; ?>
 	</header><!-- .entry-header -->
