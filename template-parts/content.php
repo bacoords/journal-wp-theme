@@ -12,7 +12,7 @@
    $color = get_term_meta( $cat[0]->term_id, 'color', true);
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> <?php if($color) echo 'style="background-color:' . $color . '"';?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> <?php if($color) echo 'style="border: 5px solid' . $color . '"';?>>
 	<header class="entry-header">
 		<?php
 		if ( is_single() ) :

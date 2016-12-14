@@ -375,7 +375,7 @@ hr {
 
 ul,
 ol {
-	margin: 0 0 1.5em 3em;
+	margin: 0 0 1.5em 0em;
 }
 
 ul {
@@ -931,8 +931,9 @@ object {
 */
 }
 
-.entry-header {
+header.entry-header {
   background-color: rgba(0,0,0,0.1);
+  margin: -5px -5px 0;
 }
 
 article.hentry{
@@ -940,6 +941,7 @@ article.hentry{
   max-width: 800px;
   padding-bottom: 1.5em;
   box-shadow: 0px 5px 25px rgba(0,0,0,0.4);
+  border:5px solid #fff;
 }
 
 .entry-title, .entry-meta, .entry-content, .entry-footer, .frontend-login-wrapper {
@@ -947,6 +949,10 @@ article.hentry{
   display: block;
   max-width: 700px;
   padding: 10px;
+}
+
+.entry-title {
+  font-size: 1.5em;
 }
 
 .frontend-login-wrapper {
