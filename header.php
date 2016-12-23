@@ -19,6 +19,7 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 
 <?php wp_head(); ?>
+<?php echo enqueue_category_color_classes() ?>
 </head>
 
 <body <?php body_class(); ?>>

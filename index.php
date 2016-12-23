@@ -31,6 +31,14 @@ get_header(); ?>
         <?php
         endif;
 
+        if ( is_archive() ) : ?>
+          <header class="archive-header <?php echo get_cat_class_bg() ?>">
+            <?php the_archive_title( '<h2>', '</h2>'); ?>
+          </header>
+
+        <?php
+        endif;
+
         /* Start the Loop */
         while ( have_posts() ) : the_post();
 

@@ -155,6 +155,43 @@ add_action('do_feed_atom_comments', 'wpb_disable_feed', 1);
 
 
 
+function enqueue_category_color_classes(){
+
+  $r = '<style type="text/css">';
+  
+  $cats = get_categories();
+  
+  foreach( $cats as $cat ){
+    $r .= '.jwp-cat-bg--' . $cat->term_id . '{ background: '.  get_term_meta( $cat->term_id, 'color', true) .';}' . '.jwp-cat-color--' . $cat->term_id . '{ color: '.  get_term_meta( $cat->term_id, 'color', true) .';}';
+  }
+  
+  $r .= '</style>';
+  
+  return $r;
+
+}
+
+function get_cat_class_bg(){
+  
+  
+  
+  $r = 'jwp-cat-bg--' . get_queried_object()->term_id;
+  
+  return $r;
+    
+}
+
+function get_cat_class_color($term_id){
+  
+  $r = 'jwp-cat-color--' . $term_id;
+  
+  return $r;
+  
+}
+
+
+
+
 
 //
 //add_action( 'parse_request', 'journal_wp_theme_redirect_to_login_if_not_logged_in', 1 );

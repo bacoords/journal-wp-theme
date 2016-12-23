@@ -936,6 +936,12 @@ header.entry-header {
   margin: -5px -5px 0;
 }
 
+header.archive-header{
+/*  background-color: rgba(0,0,0,0.1); */
+  text-align: center;
+  overflow: auto;
+}
+
 article.hentry{
   margin: 2em auto;
   max-width: 800px;
