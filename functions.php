@@ -189,8 +189,13 @@ function get_cat_class_color($term_id){
   
 }
 
-
-
+// Block REST API from not-logged-in
+// https://github.com/WP-API/WP-API/issues/1635
+add_filter( 'rest_pre_dispatch', function() {
+     if ( ! is_user_logged_in() ) {
+        return new WP_Error( 'not-logged-in', 'API Requests are only supported for authenticated requests', array( 'status' => 401 ) );
+    }
+} );
 
 
 //
