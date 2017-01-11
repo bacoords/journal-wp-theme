@@ -992,3 +992,17 @@ article.hentry{
   color: #fff;
   padding: 0.3em;
 }
+
+.site-main .posts-navigation{
+  width:600px;
+  max-width: 100%;
+  margin:1em auto; 
+}
+
+.nav-links a {
+  text-decoration: none;
+  padding: 0.5em;
+  background: #f6f6f6;
+  border-radius: 3px;
+  display: inline-block;
+}
