@@ -932,8 +932,14 @@ object {
 }
 
 header.entry-header {
-  background-color: rgba(0,0,0,0.1);
-  margin: -5px -5px 0;
+/*  background-color: rgba(0,0,0,0.01);*/
+  margin: 0;
+  padding-top: 2em;
+  padding-bottom: 1em;
+}
+
+header.site-header {
+  box-shadow: 0px 3px 25px rgba(0,0,0,0.5);
 }
 
 header.archive-header{
@@ -947,14 +953,18 @@ article.hentry{
   max-width: 800px;
   padding-bottom: 1.5em;
   box-shadow: 0px 5px 25px rgba(0,0,0,0.4);
-  border:5px solid #fff;
+/*  border:3px solid #fff;*/
 }
 
 .entry-title, .entry-meta, .entry-content, .entry-footer, .frontend-login-wrapper {
   margin: 0 auto;
   display: block;
-  max-width: 700px;
+  max-width: 630px;
   padding: 10px;
+}
+
+.entry-footer{
+  padding-bottom: 2em;
 }
 
 .entry-title {
@@ -979,7 +989,7 @@ article.hentry{
 
 #site-navigation{
   background-color: #494949;
-  padding: 0 0.5em 1.5em 0.5em;
+  padding: 0 0.5em 3em 0.5em;
 }
 
 
