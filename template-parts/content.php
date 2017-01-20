@@ -53,3 +53,6 @@
 		<?php journal_wp_theme_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
+<?php if ( is_single() ) : 
+  journal_wp_theme_post_links(); 
+  endif;?>

@@ -58,13 +58,7 @@ function journal_wp_theme_entry_footer() {
 			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'journal-wp-theme' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 		}
     
-    if( is_single() ){
-      echo '<nav class="posts-navigation"><div class="nav-links"><div class="nav-previous">';
-      previous_post_link('%link', '← %title');
-      echo '</div><div class="nav-next">';
-      next_post_link('%link', '%title →'); 
-      echo '</div></div></nav>';
-    }
+
 	}
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
@@ -74,17 +68,24 @@ function journal_wp_theme_entry_footer() {
 		echo '</span>';
 	}
 
-
-//	edit_post_link(
-//		sprintf(
-//			/* translators: %s: Name of current post */
-//			esc_html__( 'Edit %s', 'journal-wp-theme' ),
-//			the_title( '<span class="screen-reader-text">"', '"</span>', false )
-//		),
-//		'<span class="edit-link">',
-//		'</span>'
-//	);
 }
+endif;
+
+if ( ! function_exists('journal_wp_theme_post_links') ) :
+/**
+  * Prints pagination links for single posts
+  */
+function journal_wp_theme_post_links() {
+    if( is_single() ){
+      echo '<nav class="posts-navigation"><div class="nav-links"><div class="nav-previous">';
+      previous_post_link('%link', '← %title');
+      echo '</div><div class="nav-next">';
+      next_post_link('%link', '%title →'); 
+      echo '</div></div></nav>';
+    }
+}
+
+
 endif;
 
 /**
