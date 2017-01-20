@@ -57,6 +57,14 @@ function journal_wp_theme_entry_footer() {
 		if ( $tags_list ) {
 			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'journal-wp-theme' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 		}
+    
+    if( is_single() ){
+      echo '<nav class="posts-navigation"><div class="nav-links"><div class="nav-previous">';
+      previous_post_link('%link', '← %title');
+      echo '</div><div class="nav-next">';
+      next_post_link('%link', '%title →'); 
+      echo '</div></div></nav>';
+    }
 	}
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
@@ -65,6 +73,7 @@ function journal_wp_theme_entry_footer() {
 		comments_popup_link( sprintf( wp_kses( __( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'journal-wp-theme' ), array( 'span' => array( 'class' => array() ) ) ), get_the_title() ) );
 		echo '</span>';
 	}
+
 
 //	edit_post_link(
 //		sprintf(
