@@ -102,7 +102,7 @@ add_action( 'widgets_init', 'journal_wp_theme_widgets_init' );
  * Enqueue scripts and styles.
  */
 function journal_wp_theme_scripts() {
-	wp_enqueue_style( 'journal-wp-theme-style', get_stylesheet_uri(), array(), '0.0.9' );
+	wp_enqueue_style( 'journal-wp-theme-style', get_stylesheet_uri(), array(), '0.1.1' );
 
 	wp_enqueue_script( 'journal-wp-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 

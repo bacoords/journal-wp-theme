@@ -4,7 +4,7 @@ Theme URI: https://briancoords.com/
 Author: Brian Coords
 Author URI: https://briancoords.com/
 Description: Description
-Version: 1.0.0
+Version: 1.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: journal-wp-theme
@@ -961,6 +961,13 @@ article.hentry{
   display: block;
   max-width: 630px;
   padding: 10px;
+}
+
+.entry-content blockquote {
+  border-left: solid 3px #f6f6f6;
+  padding-left: 1.5em;
+  color: #717171;
+  margin-left: 0;
 }
 
 .entry-footer{
