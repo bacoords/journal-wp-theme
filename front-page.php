@@ -24,7 +24,7 @@ get_header(); ?>
 
       if ( have_posts() ) : 
       
-        echo '<ul>'
+        echo '<ul>';
 
         /* Start the Loop */
         while ( have_posts() ) : the_post();
@@ -38,7 +38,7 @@ get_header(); ?>
 
         endwhile;
       
-        echo '</ul>'
+        echo '</ul>';
 
         the_posts_navigation(array(
           'prev_text' =>  __('←Backwards'),
