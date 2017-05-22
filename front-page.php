@@ -34,7 +34,7 @@ get_header(); ?>
            * If you want to override this in a child theme, then include a file
            * called content-___.php (where ___ is the Post Format name) and that will be used instead.
            */
-          echo '<li><a href="' . the_permalink() . '">' . the_title() . '</a></li>';
+          echo '<li><a href="' . get_permalink() . '">' . get_the_title() . '</a></li>';
 
         endwhile;
       
