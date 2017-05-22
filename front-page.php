@@ -17,6 +17,12 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 	
 		<main id="main" class="site-main" role="main">
+     
+      <header class="archive-header">
+        
+        <h2>Table of Contents</h2>
+        
+      </header>
 
       <article id="post-<?php the_ID(); ?>">
       
@@ -38,7 +44,7 @@ get_header(); ?>
                * If you want to override this in a child theme, then include a file
                * called content-___.php (where ___ is the Post Format name) and that will be used instead.
                */
-              echo '<li><a href="' . get_the_permalink() . '">' . get_the_title() . '</a> - ' . get_the_time('m.d.y') . '</li>';
+              echo '<li>' . get_the_time('m.d.y') . ' - <a href="' . get_the_permalink() . '">' . get_the_title() . '</a></li>';
 
             endwhile;
 
