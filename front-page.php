@@ -18,49 +18,57 @@ get_header(); ?>
 	
 		<main id="main" class="site-main" role="main">
 
-		<?php
-    
-    if ( is_user_logged_in() ) :
-
-      if ( have_posts() ) : 
+      <article id="post-<?php the_ID(); ?>">
       
-        echo '<ul>';
+        <div class="entry-content">
 
-        /* Start the Loop */
-        while ( have_posts() ) : the_post();
+        <?php
 
-          /*
-           * Include the Post-Format-specific template for the content.
-           * If you want to override this in a child theme, then include a file
-           * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-           */
-          echo '<li><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></li>';
+        if ( is_user_logged_in() ) :
 
-        endwhile;
+          if ( have_posts() ) : 
+
+            echo '<ul>';
+
+            /* Start the Loop */
+            while ( have_posts() ) : the_post();
+
+              /*
+               * Include the Post-Format-specific template for the content.
+               * If you want to override this in a child theme, then include a file
+               * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+               */
+              echo '<li><a href="' . get_the_permalink() . '">' . get_the_title() . '</a> - ' . get_the_time('m.d.y') . '</li>';
+
+            endwhile;
+
+            echo '</ul>';
+
+            the_posts_navigation(array(
+              'prev_text' =>  __('←Backwards'),
+              'next_text' =>  __('Forwards→'),
+            ));
+
+          else :
+
+            get_template_part( 'template-parts/content', 'none' );
+
+          endif; 
+
+        else : 
+
+          echo '<div class="frontend-login-wrapper">';
+
+          wp_die( __('<p>You must be <a href="'. get_bloginfo('url') .'/wp-login.php">logged in</a>.</p>') );
+
+          echo '</div>';
+
+        endif;
+        ?>
+        
+        </div>
       
-        echo '</ul>';
-
-        the_posts_navigation(array(
-          'prev_text' =>  __('←Backwards'),
-          'next_text' =>  __('Forwards→'),
-        ));
-
-      else :
-
-        get_template_part( 'template-parts/content', 'none' );
-
-      endif; 
-      
-    else : 
-      
-      echo '<div class="frontend-login-wrapper">';
-      
-    	wp_die( __('<p>You must be <a href="'. get_bloginfo('url') .'/wp-login.php">logged in</a>.</p>') );
-      
-      echo '</div>';
-      
-    endif;
-    ?>
+      </article>
 
 		</main><!-- #main -->
 		
