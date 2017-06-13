@@ -17,14 +17,14 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 	
 		<main id="main" class="site-main" role="main">
-     
-      <header class="archive-header">
-        
-        <h2>Table of Contents</h2>
-        
-      </header>
 
       <article id="post-<?php the_ID(); ?>">
+     
+        <header class="entry-header">
+
+          <h2>Table of Contents</h2>
+
+        </header>
       
         <div class="entry-content">
 
