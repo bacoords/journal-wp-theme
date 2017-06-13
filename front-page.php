@@ -34,7 +34,7 @@ get_header(); ?>
 
           if ( have_posts() ) : 
 
-            echo '<ul class="no-bullet">';
+            echo '<ul class="no-bullet custom-indent">';
 
             /* Start the Loop */
             while ( have_posts() ) : the_post();

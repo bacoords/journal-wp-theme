@@ -4,7 +4,7 @@ Theme URI: https://briancoords.com/
 Author: Brian Coords
 Author URI: https://briancoords.com/
 Description: Description
-Version: 1.0.5
+Version: 1.0.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: journal-wp-theme
@@ -397,6 +397,11 @@ li > ol {
 
 ul.no-bullet{
   list-style: none;
+}
+
+ul.custom-indent{
+  padding-left: 6.5em;
+  text-indent: -6.5em;
 }
 
 dt {
