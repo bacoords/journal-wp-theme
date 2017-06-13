@@ -22,7 +22,7 @@ get_header(); ?>
      
         <header class="entry-header">
 
-          <h2>Table of Contents</h2>
+          <h2 class="entry-title">Table of Contents</h2>
 
         </header>
       
