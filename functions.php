@@ -102,11 +102,14 @@ add_action( 'widgets_init', 'journal_wp_theme_widgets_init' );
  * Enqueue scripts and styles.
  */
 function journal_wp_theme_scripts() {
-	wp_enqueue_style( 'journal-wp-theme-style', get_stylesheet_uri(), array(), '0.1.1' );
+  
+  $the_theme = wp_get_theme();
+  
+	wp_enqueue_style( 'journal-wp-theme-style', get_stylesheet_uri(), array(), $the_theme->get( 'Version' ) );
 
-	wp_enqueue_script( 'journal-wp-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'journal-wp-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), $the_theme->get( 'Version' ), true );
 
-	wp_enqueue_script( 'journal-wp-theme-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'journal-wp-theme-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), $the_theme->get( 'Version' ), true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
