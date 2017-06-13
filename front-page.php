@@ -34,16 +34,11 @@ get_header(); ?>
 
           if ( have_posts() ) : 
 
-            echo '<ul>';
+            echo '<ul class="no-bullet">';
 
             /* Start the Loop */
             while ( have_posts() ) : the_post();
 
-              /*
-               * Include the Post-Format-specific template for the content.
-               * If you want to override this in a child theme, then include a file
-               * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-               */
               echo '<li>' . get_the_time('m.d.y') . ' - <a href="' . get_the_permalink() . '">' . get_the_title() . '</a></li>';
 
             endwhile;
@@ -82,4 +77,5 @@ get_header(); ?>
 
 <?php
 get_sidebar();
+
 get_footer();
