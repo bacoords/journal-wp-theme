@@ -64,6 +64,9 @@ function journal_wp_theme_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+  
+    // Add editor stylesheet
+    add_editor_style( 'custom-editor-style.css' );
 }
 endif;
 add_action( 'after_setup_theme', 'journal_wp_theme_setup' );
