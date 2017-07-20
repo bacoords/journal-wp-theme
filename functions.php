@@ -65,11 +65,14 @@ function journal_wp_theme_setup() {
 		'default-image' => '',
 	) ) );
   
-    // Add editor stylesheet
-    add_editor_style( 'custom-editor-style.css' );
 }
 endif;
 add_action( 'after_setup_theme', 'journal_wp_theme_setup' );
+
+
+// Add editor stylesheet
+add_editor_style( 'custom-editor-style.css' );
+
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
