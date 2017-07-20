@@ -70,9 +70,13 @@ endif;
 add_action( 'after_setup_theme', 'journal_wp_theme_setup' );
 
 
-// Add editor stylesheet
-add_editor_style( 'custom-editor-style.css' );
-
+/**
+ * Registers an editor stylesheet for the theme.
+ */
+function journal_wp_theme_add_editor_styles() {
+    add_editor_style( 'custom-editor-style.css' );
+}
+add_action( 'admin_init', 'journal_wp_theme_add_editor_styles' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
