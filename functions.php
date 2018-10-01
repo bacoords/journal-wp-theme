@@ -64,7 +64,8 @@ function journal_wp_theme_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
-  
+	add_theme_support( 'editor-styles' );
+	add_theme_support( 'dark-editor-style' );
 }
 endif;
 add_action( 'after_setup_theme', 'journal_wp_theme_setup' );
@@ -112,9 +113,9 @@ add_action( 'widgets_init', 'journal_wp_theme_widgets_init' );
  * Enqueue scripts and styles.
  */
 function journal_wp_theme_scripts() {
-  
+
   $the_theme = wp_get_theme();
-  
+
 	wp_enqueue_style( 'journal-wp-theme-style', get_stylesheet_uri(), array(), $the_theme->get( 'Version' ) );
 
 	wp_enqueue_script( 'journal-wp-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), $the_theme->get( 'Version' ), true );
@@ -171,35 +172,35 @@ add_action('do_feed_atom_comments', 'wpb_disable_feed', 1);
 function enqueue_category_color_classes(){
 
   $r = '<style type="text/css">';
-  
+
   $cats = get_categories();
-  
+
   foreach( $cats as $cat ){
     $r .= '.jwp-cat-bg--' . $cat->term_id . '{ background: '.  get_term_meta( $cat->term_id, 'color', true) .';}' . '.jwp-cat-color--' . $cat->term_id . '{ color: '.  get_term_meta( $cat->term_id, 'color', true) .';}';
   }
-  
+
   $r .= '</style>';
-  
+
   return $r;
 
 }
 
 function get_cat_class_bg(){
-  
-  
-  
+
+
+
   $r = 'jwp-cat-bg--' . get_queried_object()->term_id;
-  
+
   return $r;
-    
+
 }
 
 function get_cat_class_color($term_id){
-  
+
   $r = 'jwp-cat-color--' . $term_id;
-  
+
   return $r;
-  
+
 }
 
 // Block REST API from not-logged-in
